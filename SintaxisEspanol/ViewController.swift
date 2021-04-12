@@ -10,7 +10,7 @@ import UIKit
 struct Configuracion {
     // true sin comas, false con
     static var modo = true
-    static var numPreg = 10
+    static var numPreg = 5
 }
 
 class ViewController: UIViewController {

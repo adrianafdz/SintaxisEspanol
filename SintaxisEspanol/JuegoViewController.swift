@@ -9,6 +9,12 @@ import UIKit
 
 class JuegoViewController: UIViewController {
 
+    @IBOutlet weak var lbTime: UILabel!
+    var timer : Timer!
+    var count : Int = 0
+    var timerActive = false
+    
+    @IBOutlet weak var progreso: UIProgressView!
     @IBOutlet weak var btnComa: UIButton!
     @IBOutlet weak var btnRevisar: UIButton!
     @IBOutlet weak var lbParte: UILabel!
@@ -32,6 +38,8 @@ class JuegoViewController: UIViewController {
         lbParte.layer.borderWidth = 1
         
         setOracion()
+        timerActive = true
+        startTimer()
     }
     
     func setOracion() {
@@ -49,7 +57,6 @@ class JuegoViewController: UIViewController {
         lbParte.text = arrPartes[curr]
     }
     
-    
     @IBAction func prevParte(_ sender: UIButton) {
         if curr == 0 {
             curr = arrPartes.count - 1
@@ -58,6 +65,41 @@ class JuegoViewController: UIViewController {
         }
 
         lbParte.text = arrPartes[curr]
+    }
+    
+    func startTimer() {
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
+    }
+    
+    @IBAction func revisar(_ sender: UIButton) {
+        if timerActive {
+            timer.invalidate()
+            btnRevisar.setTitle("Continuar", for: .normal)
+        } else {
+            startTimer()
+            btnRevisar.setTitle("Revisar", for: .normal)
+        }
+        
+        timerActive = !timerActive
+        progreso.progress += 0.2
+        
+        if progreso.progress == 1 {
+            print("done")
+            let alert = UIAlertController(title: "Fin", message: "Terminaste el quiz", preferredStyle: .alert)
+            let accion = UIAlertAction(title: "OK", style: .default, handler: {_ in 
+                self.dismiss(animated: true, completion:nil)
+            })
+            alert.addAction(accion)
+            present(alert, animated: true, completion: nil)
+        }
+    }
+    
+    @objc func updateTimer() {
+        count += 1
+        // update label
+        var strTime = String(format: "%02d", count/60)
+        strTime += ":" + String(format: "%02d", count%60)
+        lbTime.text = strTime
     }
     
     /*
