@@ -13,6 +13,8 @@ struct Configuracion {
     static var numPreg = 5
 }
 
+var listaOraciones = [Oracion]()
+
 class ViewController: UIViewController {
 
     @IBOutlet weak var btnComenzar: UIButton!
@@ -33,6 +35,16 @@ class ViewController: UIViewController {
         btnHistorial.layer.borderColor = CGColor.init(red: 0, green: 0, blue: 0, alpha: 0.5)
         
         btnModo.setTitle(Configuracion.modo ? "Sin comas" : "Con comas", for: .normal)
+        
+        // ORACIONES
+        let ruta = Bundle.main.path(forResource: "oraciones", ofType: "json")!
+        
+        do {
+            let data = try Data.init(contentsOf: URL(fileURLWithPath: ruta))
+            listaOraciones = try JSONDecoder().decode([Oracion].self, from: data)
+        } catch {
+            print("Error al cargar archivo")
+        }
     }
 
     @IBAction func toggleModo(_ sender: UIButton) {

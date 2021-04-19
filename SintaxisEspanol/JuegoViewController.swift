@@ -17,13 +17,19 @@ class JuegoViewController: UIViewController {
     @IBOutlet weak var progreso: UIProgressView!
     @IBOutlet weak var btnComa: UIButton!
     @IBOutlet weak var btnRevisar: UIButton!
-    @IBOutlet weak var lbParte: UILabel!
+    @IBOutlet weak var btnParte: UIButton!
+    @IBOutlet weak var btnPrev: UIButton!
+    @IBOutlet weak var btnNext: UIButton!
     
-    var sujeto = "Yo"
-    var verbo = "leo"
-    var predicado = "un libro"
+    
+    // no es lo que se va a ver en realidad, solo para checar
+    @IBOutlet weak var lbRespuesta: UILabel!
+    var res = ""
+    
+    var oracionActual : Oracion!
     var curr = 0
     var arrPartes = [String]()
+    var respuesta = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,9 +39,9 @@ class JuegoViewController: UIViewController {
         
         btnComa.layer.cornerRadius = 5
         btnRevisar.layer.cornerRadius = 5
-        lbParte.layer.cornerRadius = 10
-        lbParte.layer.borderColor = CGColor.init(red: 0, green: 0, blue: 0, alpha: 1)
-        lbParte.layer.borderWidth = 1
+        btnParte.layer.cornerRadius = 10
+        btnParte.layer.borderColor = CGColor.init(red: 0, green: 0, blue: 0, alpha: 1)
+        btnParte.layer.borderWidth = 1
         
         setOracion()
         timerActive = true
@@ -43,8 +49,20 @@ class JuegoViewController: UIViewController {
     }
     
     func setOracion() {
-        arrPartes = [sujeto, verbo, predicado]
-        lbParte.text = arrPartes[0]
+        // elegir oracion al azar
+        oracionActual = listaOraciones[Int.random(in: 0..<listaOraciones.count)]
+        arrPartes = oracionActual.getPartes()
+        curr = 0
+        btnParte.setTitle(arrPartes[curr], for: .normal)
+        btnParte.isHidden = false
+        respuesta = [String]()
+        btnRevisar.isEnabled = false
+        btnComa.isEnabled = true
+        btnPrev.isHidden = false
+        btnNext.isHidden = false
+        
+        res = ""
+        lbRespuesta.text = ""
     }
     
     @IBAction func nextParte(_ sender: UIButton) {
@@ -54,7 +72,7 @@ class JuegoViewController: UIViewController {
             curr += 1
         }
 
-        lbParte.text = arrPartes[curr]
+        btnParte.setTitle(arrPartes[curr], for: .normal)
     }
     
     @IBAction func prevParte(_ sender: UIButton) {
@@ -64,7 +82,40 @@ class JuegoViewController: UIViewController {
             curr -= 1
         }
 
-        lbParte.text = arrPartes[curr]
+        btnParte.setTitle(arrPartes[curr], for: .normal)
+    }
+    
+    @IBAction func agregarComa(_ sender: UIButton) {
+        respuesta.append(",")
+        
+        res += ", "
+        lbRespuesta.text = res
+    }
+    
+    @IBAction func seleccionarParte(_ sender: UIButton) {
+        
+        res += arrPartes[curr] + " "
+        lbRespuesta.text = res
+        
+        respuesta.append(arrPartes[curr])
+        arrPartes.remove(at: curr)
+        
+        if arrPartes.count == 0 {
+            btnParte.isHidden = true;
+            btnParte.setTitle("", for: .normal)
+            btnPrev.isHidden = true
+            btnNext.isHidden = true
+            btnRevisar.isEnabled = true
+            btnComa.isEnabled = false
+        } else {
+            if curr+1 >= arrPartes.count {
+                curr = 0
+            } else {
+                curr += 1
+            }
+            print(curr)
+            btnParte.setTitle(arrPartes[curr], for: .normal)
+        }
     }
     
     func startTimer() {
@@ -74,8 +125,10 @@ class JuegoViewController: UIViewController {
     @IBAction func revisar(_ sender: UIButton) {
         if timerActive {
             timer.invalidate()
+            print(respuesta)
             btnRevisar.setTitle("Continuar", for: .normal)
         } else {
+            setOracion()
             startTimer()
             btnRevisar.setTitle("Revisar", for: .normal)
         }

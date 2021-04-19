@@ -14,6 +14,8 @@
 		9A2C887A262296E50009EB69 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A2C8879262296E50009EB69 /* Assets.xcassets */; };
 		9A2C887D262296E50009EB69 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A2C887B262296E50009EB69 /* LaunchScreen.storyboard */; };
 		9A2C88862622A3440009EB69 /* JuegoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2C88852622A3440009EB69 /* JuegoViewController.swift */; };
+		9AD03928262DEA3300714659 /* oraciones.json in Resources */ = {isa = PBXBuildFile; fileRef = 9AD03927262DEA3300714659 /* oraciones.json */; };
+		9AD0392B262DEA5E00714659 /* Oracion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD0392A262DEA5E00714659 /* Oracion.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		9A2C887C262296E50009EB69 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9A2C887E262296E50009EB69 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9A2C88852622A3440009EB69 /* JuegoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JuegoViewController.swift; sourceTree = "<group>"; };
+		9AD03927262DEA3300714659 /* oraciones.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = oraciones.json; sourceTree = "<group>"; };
+		9AD0392A262DEA5E00714659 /* Oracion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Oracion.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +66,8 @@
 				9A2C8872262296E40009EB69 /* SceneDelegate.swift */,
 				9A2C8874262296E40009EB69 /* ViewController.swift */,
 				9A2C8876262296E40009EB69 /* Main.storyboard */,
+				9AD0392A262DEA5E00714659 /* Oracion.swift */,
+				9AD03927262DEA3300714659 /* oraciones.json */,
 				9A2C88852622A3440009EB69 /* JuegoViewController.swift */,
 				9A2C8879262296E50009EB69 /* Assets.xcassets */,
 				9A2C887B262296E50009EB69 /* LaunchScreen.storyboard */,
@@ -128,6 +134,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A2C887D262296E50009EB69 /* LaunchScreen.storyboard in Resources */,
+				9AD03928262DEA3300714659 /* oraciones.json in Resources */,
 				9A2C887A262296E50009EB69 /* Assets.xcassets in Resources */,
 				9A2C8878262296E40009EB69 /* Main.storyboard in Resources */,
 			);
@@ -142,6 +149,7 @@
 			files = (
 				9A2C8875262296E40009EB69 /* ViewController.swift in Sources */,
 				9A2C88862622A3440009EB69 /* JuegoViewController.swift in Sources */,
+				9AD0392B262DEA5E00714659 /* Oracion.swift in Sources */,
 				9A2C8871262296E40009EB69 /* AppDelegate.swift in Sources */,
 				9A2C8873262296E40009EB69 /* SceneDelegate.swift in Sources */,
 			);
