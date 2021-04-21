@@ -36,7 +36,13 @@ class ViewController: UIViewController {
         
         btnModo.setTitle(Configuracion.modo ? "Sin comas" : "Con comas", for: .normal)
         
-        // ORACIONES
+        // Configuración
+        let defaults = UserDefaults.standard
+        
+        Configuracion.modo = defaults.bool(forKey: "Modo")
+        Configuracion.numPreg = defaults.integer(forKey: "NumPreg")
+        
+        // Cargar oraciones
         let ruta = Bundle.main.path(forResource: "oraciones", ofType: "json")!
         
         do {
@@ -50,6 +56,11 @@ class ViewController: UIViewController {
     @IBAction func toggleModo(_ sender: UIButton) {
         Configuracion.modo = !Configuracion.modo
         btnModo.setTitle(Configuracion.modo ? "Sin comas" : "Con comas", for: .normal)
+    }
+    
+    @IBAction func unwindConfig(for unwindSegue: UIStoryboardSegue, towards subsequentVC: UIViewController) {
+        let defaults = UserDefaults.standard
+        Configuracion.numPreg = defaults.integer(forKey: "NumPreg")
     }
     
 }

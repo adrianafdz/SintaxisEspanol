@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3BEB485E263071AA00E8CECC /* ConfigViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BEB485D263071AA00E8CECC /* ConfigViewController.swift */; };
 		9A2C8871262296E40009EB69 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2C8870262296E40009EB69 /* AppDelegate.swift */; };
 		9A2C8873262296E40009EB69 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2C8872262296E40009EB69 /* SceneDelegate.swift */; };
 		9A2C8875262296E40009EB69 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2C8874262296E40009EB69 /* ViewController.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3BEB485D263071AA00E8CECC /* ConfigViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigViewController.swift; sourceTree = "<group>"; };
 		9A2C886D262296E40009EB69 /* SintaxisEspanol.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SintaxisEspanol.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A2C8870262296E40009EB69 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9A2C8872262296E40009EB69 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -64,8 +66,9 @@
 			children = (
 				9A2C8870262296E40009EB69 /* AppDelegate.swift */,
 				9A2C8872262296E40009EB69 /* SceneDelegate.swift */,
-				9A2C8874262296E40009EB69 /* ViewController.swift */,
 				9A2C8876262296E40009EB69 /* Main.storyboard */,
+				9A2C8874262296E40009EB69 /* ViewController.swift */,
+				3BEB485D263071AA00E8CECC /* ConfigViewController.swift */,
 				9AD0392A262DEA5E00714659 /* Oracion.swift */,
 				9AD03927262DEA3300714659 /* oraciones.json */,
 				9A2C88852622A3440009EB69 /* JuegoViewController.swift */,
@@ -149,6 +152,7 @@
 			files = (
 				9A2C8875262296E40009EB69 /* ViewController.swift in Sources */,
 				9A2C88862622A3440009EB69 /* JuegoViewController.swift in Sources */,
+				3BEB485E263071AA00E8CECC /* ConfigViewController.swift in Sources */,
 				9AD0392B262DEA5E00714659 /* Oracion.swift in Sources */,
 				9A2C8871262296E40009EB69 /* AppDelegate.swift in Sources */,
 				9A2C8873262296E40009EB69 /* SceneDelegate.swift in Sources */,
