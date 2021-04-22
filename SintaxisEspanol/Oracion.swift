@@ -12,13 +12,15 @@ class Oracion: NSObject, Codable {
     var verbo : String
     var objDirecto : String!
     var objIndirecto : String!
+    var circunstancial : String!
     var extra : String!
     
-    init(sujeto : String!, verbo : String, objDirecto : String!, objIndirecto: String!, extra : String!) {
+    init(sujeto : String!, verbo : String, objDirecto : String!, objIndirecto: String!, circunstancial : String!, extra : String!) {
         self.sujeto = sujeto
         self.verbo = verbo
         self.objDirecto = objDirecto
         self.objIndirecto = objIndirecto
+        self.circunstancial = circunstancial
         self.extra = extra
     }
     
@@ -35,6 +37,10 @@ class Oracion: NSObject, Codable {
         
         if objIndirecto! != "" {
             arr.append(objIndirecto!)
+        }
+        
+        if circunstancial! != "" {
+            arr.append(circunstancial!)
         }
         
         if extra! != "" {

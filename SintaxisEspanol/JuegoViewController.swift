@@ -26,6 +26,7 @@ class JuegoViewController: UIViewController {
     @IBOutlet weak var lbRespuesta: UILabel!
     var res = ""
     
+    var numPreguntas : Float = 10
     var oracionActual : Oracion!
     var curr = 0
     var arrPartes = [String]()
@@ -42,6 +43,8 @@ class JuegoViewController: UIViewController {
         btnParte.layer.cornerRadius = 10
         btnParte.layer.borderColor = CGColor.init(red: 0, green: 0, blue: 0, alpha: 1)
         btnParte.layer.borderWidth = 1
+        
+        numPreguntas = UserDefaults.standard.float(forKey: "NumPreg")
         
         setOracion()
         timerActive = true
@@ -113,7 +116,6 @@ class JuegoViewController: UIViewController {
             } else {
                 curr += 1
             }
-            print(curr)
             btnParte.setTitle(arrPartes[curr], for: .normal)
         }
     }
@@ -134,10 +136,9 @@ class JuegoViewController: UIViewController {
         }
         
         timerActive = !timerActive
-        progreso.progress += 0.2
+        progreso.progress += Float(1/numPreguntas)
         
         if progreso.progress == 1 {
-            print("done")
             let alert = UIAlertController(title: "Fin", message: "Terminaste el quiz", preferredStyle: .alert)
             let accion = UIAlertAction(title: "OK", style: .default, handler: {_ in 
                 self.dismiss(animated: true, completion:nil)
