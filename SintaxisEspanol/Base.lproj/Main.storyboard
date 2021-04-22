@@ -404,6 +404,10 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="xd6-bZ-6NQ" id="E7h-WP-WMP"/>
+                                    <outlet property="delegate" destination="xd6-bZ-6NQ" id="9Mk-UN-tJT"/>
+                                </connections>
                             </tableView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Ccw-X7-ZWi">
                                 <rect key="frame" x="47" y="181" width="280" height="32"/>
