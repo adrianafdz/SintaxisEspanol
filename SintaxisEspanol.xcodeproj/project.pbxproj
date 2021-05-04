@@ -17,6 +17,7 @@
 		9A2C887A262296E50009EB69 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A2C8879262296E50009EB69 /* Assets.xcassets */; };
 		9A2C887D262296E50009EB69 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A2C887B262296E50009EB69 /* LaunchScreen.storyboard */; };
 		9A2C88862622A3440009EB69 /* JuegoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2C88852622A3440009EB69 /* JuegoViewController.swift */; };
+		9AA4300E2641FADC0052F8CB /* ResultadoPopOver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA4300D2641FADC0052F8CB /* ResultadoPopOver.swift */; };
 		9AD03928262DEA3300714659 /* oraciones.json in Resources */ = {isa = PBXBuildFile; fileRef = 9AD03927262DEA3300714659 /* oraciones.json */; };
 		9AD0392B262DEA5E00714659 /* Oracion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD0392A262DEA5E00714659 /* Oracion.swift */; };
 		DD71217D2630F237001AA873 /* HistorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD71217C2630F237001AA873 /* HistorialViewController.swift */; };
@@ -38,6 +39,7 @@
 		9A2C887C262296E50009EB69 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9A2C887E262296E50009EB69 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9A2C88852622A3440009EB69 /* JuegoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JuegoViewController.swift; sourceTree = "<group>"; };
+		9AA4300D2641FADC0052F8CB /* ResultadoPopOver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultadoPopOver.swift; sourceTree = "<group>"; };
 		9AD03927262DEA3300714659 /* oraciones.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = oraciones.json; sourceTree = "<group>"; };
 		9AD0392A262DEA5E00714659 /* Oracion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Oracion.swift; sourceTree = "<group>"; };
 		DD71217C2630F237001AA873 /* HistorialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistorialViewController.swift; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 				9A2C8870262296E40009EB69 /* AppDelegate.swift */,
 				9A2C8872262296E40009EB69 /* SceneDelegate.swift */,
 				9A2C8876262296E40009EB69 /* Main.storyboard */,
+				9AA4300D2641FADC0052F8CB /* ResultadoPopOver.swift */,
 				DD71217C2630F237001AA873 /* HistorialViewController.swift */,
 				DD71217F2631148A001AA873 /* Score.swift */,
 				9A2C8874262296E40009EB69 /* ViewController.swift */,
@@ -188,6 +191,7 @@
 				9A2C8871262296E40009EB69 /* AppDelegate.swift in Sources */,
 				9A2C8873262296E40009EB69 /* SceneDelegate.swift in Sources */,
 				DD71217D2630F237001AA873 /* HistorialViewController.swift in Sources */,
+				9AA4300E2641FADC0052F8CB /* ResultadoPopOver.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

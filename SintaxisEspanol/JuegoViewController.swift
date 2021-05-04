@@ -7,7 +7,7 @@
 
 import UIKit
 
-class JuegoViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class JuegoViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UIPopoverPresentationControllerDelegate {
 
 
     @IBOutlet weak var collectionView: UICollectionView!
@@ -48,6 +48,10 @@ class JuegoViewController: UIViewController, UICollectionViewDelegate, UICollect
         setOracion()
         timerActive = true
         startTimer()
+    }
+    
+    func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
+        return .none
     }
     
     func setOracion() {
@@ -123,31 +127,39 @@ class JuegoViewController: UIViewController, UICollectionViewDelegate, UICollect
     }
     
     @IBAction func revisar(_ sender: UIButton) {
+        progreso.progress += Float(1/numPreguntas)
         if timerActive {
             timer.invalidate()
             
             respuesta.removeAll()
             collectionView.reloadData()
-            
-            print(respuesta)
-            btnRevisar.setTitle("Continuar", for: .normal)
-        } else {
-            setOracion()
-            startTimer()
-            btnRevisar.setTitle("Revisar", for: .normal)
+            timerActive = !timerActive
         }
-        
-        timerActive = !timerActive
-        progreso.progress += Float(1/numPreguntas)
-        
+    }
+    
+    func siguientePregunta() {
         if progreso.progress == 1 {
+            print("Terminar juego")
+            /*
             let alert = UIAlertController(title: "Fin", message: "Terminaste el quiz", preferredStyle: .alert)
-            let accion = UIAlertAction(title: "OK", style: .default, handler: {_ in 
+            let accion = UIAlertAction(title: "OK", style: .default, handler: {_ in
                 self.dismiss(animated: true, completion:nil)
             })
             alert.addAction(accion)
             present(alert, animated: true, completion: nil)
+             */
+        } else {
+            timerActive = true
+            setOracion()
+            startTimer()
         }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let vistaPop = segue.destination as! ResultadoPopOver
+        vistaPop.respuesta = respuesta
+        vistaPop.oracion = oracionActual
+        vistaPop.popoverPresentationController?.delegate = self
     }
     
     @objc func updateTimer() {

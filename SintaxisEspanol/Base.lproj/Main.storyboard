@@ -166,6 +166,9 @@
                                 <state key="normal" title="Revisar"/>
                                 <connections>
                                     <action selector="revisar:" destination="Gnc-7Y-lG7" eventType="touchUpInside" id="ug9-Pb-3Hk"/>
+                                    <segue destination="prG-Ls-TC9" kind="popoverPresentation" popoverAnchorView="u85-0o-MoC" id="YmW-Ey-ctf">
+                                        <popoverArrowDirection key="popoverArrowDirection"/>
+                                    </segue>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qii-7r-LYH">
@@ -246,6 +249,53 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GSD-gN-XQZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1261.5999999999999" y="-287.40629685157421"/>
+        </scene>
+        <!--Resultado Pop Over-->
+        <scene sceneID="HWz-Cm-mwJ">
+            <objects>
+                <viewController id="prG-Ls-TC9" customClass="ResultadoPopOver" customModule="SintaxisEspanol" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="x03-fk-S5d">
+                        <rect key="frame" x="0.0" y="0.0" width="300" height="200"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U0I-T0-4De">
+                                <rect key="frame" x="107" y="148" width="87" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Continuar">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="continuar:" destination="prG-Ls-TC9" eventType="touchUpInside" id="Wcw-ya-lA7"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fs1-ey-cdE">
+                                <rect key="frame" x="24" y="67" width="253" height="67"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cPi-Vu-ERR">
+                                <rect key="frame" x="71" y="28" width="159" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="juC-ZL-TPY"/>
+                        <color key="backgroundColor" red="0.87654320987654322" green="0.8906788017404198" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <size key="freeformSize" width="300" height="200"/>
+                    <connections>
+                        <outlet property="lbRespuesta" destination="Fs1-ey-cdE" id="QMH-fW-c6X"/>
+                        <outlet property="lbResultado" destination="cPi-Vu-ERR" id="VDG-cK-c07"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="82z-4r-BKa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1968" y="-287.85607196401799"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Pdu-9Y-kje">

@@ -24,12 +24,14 @@ class Oracion: NSObject, Codable {
         self.extra = extra
     }
     
-    func getPartes() -> [String] {
-        var arr = [verbo]
+    func getRespuestaSinComas() -> [String] {
+        var arr = [String]()
         
         if sujeto! != "" {
             arr.append(sujeto!)
         }
+        
+        arr.append(verbo)
         
         if objDirecto! != "" {
             arr.append(objDirecto!)
@@ -46,8 +48,18 @@ class Oracion: NSObject, Codable {
         if extra! != "" {
             arr.append(extra!)
         }
+
+        return arr
+    }
+    
+    func getPartes() -> [String] {
+        var arr = self.getRespuestaSinComas()
         
         arr.shuffle()
         return arr
+    }
+    
+    func revisarSinComas(respuesta : [String]) -> Bool {
+        return respuesta == self.getRespuestaSinComas()
     }
 }
