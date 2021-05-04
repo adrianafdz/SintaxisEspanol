@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		3BEB485E263071AA00E8CECC /* ConfigViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BEB485D263071AA00E8CECC /* ConfigViewController.swift */; };
+		9A116D542641AFE700E10B0E /* TarjetaCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A116D532641AFE700E10B0E /* TarjetaCollectionViewCell.swift */; };
+		9A116D572641B21000E10B0E /* LeftAlignedFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A116D562641B21000E10B0E /* LeftAlignedFlowLayout.swift */; };
 		9A2C8871262296E40009EB69 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2C8870262296E40009EB69 /* AppDelegate.swift */; };
 		9A2C8873262296E40009EB69 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2C8872262296E40009EB69 /* SceneDelegate.swift */; };
 		9A2C8875262296E40009EB69 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2C8874262296E40009EB69 /* ViewController.swift */; };
@@ -25,6 +27,8 @@
 
 /* Begin PBXFileReference section */
 		3BEB485D263071AA00E8CECC /* ConfigViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigViewController.swift; sourceTree = "<group>"; };
+		9A116D532641AFE700E10B0E /* TarjetaCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TarjetaCollectionViewCell.swift; sourceTree = "<group>"; };
+		9A116D562641B21000E10B0E /* LeftAlignedFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftAlignedFlowLayout.swift; sourceTree = "<group>"; };
 		9A2C886D262296E40009EB69 /* SintaxisEspanol.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SintaxisEspanol.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A2C8870262296E40009EB69 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9A2C8872262296E40009EB69 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -86,6 +90,8 @@
 				9A2C8879262296E50009EB69 /* Assets.xcassets */,
 				9A2C887B262296E50009EB69 /* LaunchScreen.storyboard */,
 				9A2C887E262296E50009EB69 /* Info.plist */,
+				9A116D532641AFE700E10B0E /* TarjetaCollectionViewCell.swift */,
+				9A116D562641B21000E10B0E /* LeftAlignedFlowLayout.swift */,
 			);
 			path = SintaxisEspanol;
 			sourceTree = "<group>";
@@ -175,6 +181,8 @@
 				9A2C88862622A3440009EB69 /* JuegoViewController.swift in Sources */,
 				DD7121802631148A001AA873 /* Score.swift in Sources */,
 				3BEB485E263071AA00E8CECC /* ConfigViewController.swift in Sources */,
+				9A116D572641B21000E10B0E /* LeftAlignedFlowLayout.swift in Sources */,
+				9A116D542641AFE700E10B0E /* TarjetaCollectionViewCell.swift in Sources */,
 				9AD0392B262DEA5E00714659 /* Oracion.swift in Sources */,
 				DD71218526311EE6001AA873 /* HighscoreCell.swift in Sources */,
 				9A2C8871262296E40009EB69 /* AppDelegate.swift in Sources */,

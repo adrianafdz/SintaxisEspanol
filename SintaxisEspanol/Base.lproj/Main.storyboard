@@ -6,6 +6,7 @@
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -174,13 +175,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BMN-Yz-17t">
-                                <rect key="frame" x="91" y="174" width="196" height="145"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="j6D-Cd-qpe">
                                 <rect key="frame" x="83" y="433" width="212" height="85"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -191,6 +185,47 @@
                                     <action selector="seleccionarParte:" destination="Gnc-7Y-lG7" eventType="touchUpInside" id="o2r-FR-E31"/>
                                 </connections>
                             </button>
+                            <collectionView autoresizesSubviews="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="v9B-Gs-Azs">
+                                <rect key="frame" x="38" y="171" width="298" height="184"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewLayout key="collectionViewLayout" id="Vwe-b8-fqn" customClass="LeftAlignedFlowLayout" customModule="SintaxisEspanol" customModuleProvider="target"/>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="celda" id="hq5-Hh-bYD" customClass="TarjetaCollectionViewCell" customModule="SintaxisEspanol" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="hV8-A3-u1X">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KcM-JW-gWj">
+                                                    <rect key="frame" x="5" y="5" width="40" height="40"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" relation="lessThanOrEqual" constant="42" id="Ibm-ue-NDj"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="KcM-JW-gWj" firstAttribute="leading" secondItem="hV8-A3-u1X" secondAttribute="leading" constant="5" id="0Iy-gf-3UL"/>
+                                                <constraint firstItem="KcM-JW-gWj" firstAttribute="top" secondItem="hV8-A3-u1X" secondAttribute="top" constant="5" id="YGc-gz-6LD"/>
+                                                <constraint firstAttribute="trailing" secondItem="KcM-JW-gWj" secondAttribute="trailing" constant="5" id="aSi-si-mEN"/>
+                                                <constraint firstAttribute="bottom" secondItem="KcM-JW-gWj" secondAttribute="bottom" constant="5" id="cwf-5b-sTv"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <connections>
+                                            <outlet property="lbParte" destination="KcM-JW-gWj" id="Uyg-dA-Gif"/>
+                                            <outlet property="maxWidthConstraint" destination="Ibm-ue-NDj" id="l7I-6g-wQc"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="Gnc-7Y-lG7" id="mHq-Hq-5dc"/>
+                                    <outlet property="delegate" destination="Gnc-7Y-lG7" id="AOz-mS-DvT"/>
+                                </connections>
+                            </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="T1f-gP-uhY"/>
                         <color key="backgroundColor" red="0.96854287390000005" green="0.96868163350000003" blue="0.96851247549999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -202,14 +237,15 @@
                         <outlet property="btnParte" destination="j6D-Cd-qpe" id="icl-Mi-qYM"/>
                         <outlet property="btnPrev" destination="d02-41-Qzr" id="Bso-kj-9k1"/>
                         <outlet property="btnRevisar" destination="u85-0o-MoC" id="tCV-jw-piZ"/>
-                        <outlet property="lbRespuesta" destination="BMN-Yz-17t" id="bbE-vb-4m7"/>
+                        <outlet property="collectionLayout" destination="Vwe-b8-fqn" id="ad7-7z-BLy"/>
+                        <outlet property="collectionView" destination="v9B-Gs-Azs" id="Ka8-d6-Fg0"/>
                         <outlet property="lbTime" destination="qii-7r-LYH" id="WkN-b9-K6A"/>
                         <outlet property="progreso" destination="cvZ-SQ-fJa" id="5sa-Kr-dz6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GSD-gN-XQZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1263" y="-287"/>
+            <point key="canvasLocation" x="1261.5999999999999" y="-287.40629685157421"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Pdu-9Y-kje">
