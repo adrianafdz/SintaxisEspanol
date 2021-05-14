@@ -8,6 +8,7 @@
 import UIKit
 
 class Oracion: NSObject, Codable {
+    // var partes: [String: String] = [:]
     var sujeto : String!
     var verbo : String
     var objDirecto : String!
@@ -22,6 +23,13 @@ class Oracion: NSObject, Codable {
         self.objIndirecto = objIndirecto
         self.circunstancial = circunstancial
         self.extra = extra
+        
+        // self.partes[sujeto] = "s"
+        // self.partes[verbo] = "v"
+        // self.partes[objDirecto] = "d"
+        // self.partes[objIndirecto] = "i"
+        // self.partes[circunstancial] = "c"
+        // self.partes[extra] = "e"
     }
     
     func getRespuestaSinComas() -> [String] {

@@ -13,6 +13,7 @@ class ConfigViewController: UIViewController {
     @IBOutlet weak var tf_hora: UITextField!
     @IBOutlet weak var tf_numero_preguntas: UITextField!
     
+    let datePicker = UIDatePicker()
     let userNotificationCenter = UNUserNotificationCenter.current()
     
     override func viewDidLoad() {
@@ -23,21 +24,20 @@ class ConfigViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         // Asignar selector de fecha al campo de texto de hora
-        tf_hora.datePicker(
-            target: self,
-            doneAction: #selector(doneAction),
-            cancelAction: #selector(cancelAction),
-            datePickerMode: .time)
+        createDatePicker()
         
         // Cargar configuración de usuario
         let defaults = UserDefaults.standard
         
         sw_notificaciones.isOn = defaults.bool(forKey: "Notificacion")
         tf_numero_preguntas.text = String(defaults.integer(forKey: "NumPreg"))
+        tf_hora.text = defaults.string(forKey: "Hora")
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let defaults = UserDefaults.standard
+        
+        defaults.set(sw_notificaciones.isOn, forKey: "Notificacion")
         
         if let num = Int(tf_numero_preguntas.text!) {
             defaults.set(num, forKey: "NumPreg")
@@ -58,6 +58,8 @@ class ConfigViewController: UIViewController {
             alert.addAction(accion)
             present(alert, animated: true, completion: nil)
         }
+        
+        defaults.set(tf_hora.text, forKey: "Hora")
     }
     
     // Métodos para notificaciones
@@ -121,54 +123,33 @@ class ConfigViewController: UIViewController {
     @IBAction func quitarTeclado(_ sender: UITapGestureRecognizer) {
         self.view.endEditing(true)
     }
-}
-
-extension UITextField {
-    func datePicker(
-        target: Any,
-        doneAction: Selector,
-        cancelAction: Selector,
-        datePickerMode: UIDatePicker.Mode = .date
-    ) {
-        let screenWidth = UIScreen.main.bounds.width
+    
+    func createDatePicker() {
+        let toolbar = UIToolbar()
+        toolbar.sizeToFit()
         
-        func buttonItem(withSystemItemStyle style: UIBarButtonItem.SystemItem) -> UIBarButtonItem {
-            let buttonTarget = style == .flexibleSpace ? nil : target
-            let action: Selector? = {
-                switch style {
-                    case .cancel:
-                        return cancelAction
-                    case .done:
-                        return doneAction
-                    default:
-                        return nil
-                }
-            }()
-            
-            let barButtonItem = UIBarButtonItem(
-                barButtonSystemItem: style,
-                target: buttonTarget,
-                action: action)
-            
-            return barButtonItem
-        }
+        let bt_listo = UIBarButtonItem(
+            barButtonSystemItem: .done,
+            target: nil,
+            action: #selector(listoPresionado))
         
-        let datePicker = UIDatePicker(
-            frame: CGRect(x: 0, y: 0, width: screenWidth, height: 216))
+        toolbar.setItems([bt_listo], animated: true)
         
-        datePicker.datePickerMode = datePickerMode
-        self.inputView = datePicker
+        tf_hora.inputAccessoryView = toolbar
         
-        let toolBar = UIToolbar(
-            frame: CGRect(x: 0, y: 0, width: screenWidth, height: 44))
+        tf_hora.inputView = datePicker
         
-        toolBar.setItems(
-            [buttonItem(withSystemItemStyle: .cancel),
-             buttonItem(withSystemItemStyle: .flexibleSpace),
-             buttonItem(withSystemItemStyle: .done)],
-            animated: true
-        )
+        datePicker.preferredDatePickerStyle = .wheels
         
-        self.inputAccessoryView = toolBar
+        datePicker.datePickerMode = .time
+    }
+    
+    @objc func listoPresionado() {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .none
+        formatter.timeStyle = .short
+        
+        tf_hora.text = formatter.string(from: datePicker.date)
+        self.view.endEditing(true);
     }
 }
