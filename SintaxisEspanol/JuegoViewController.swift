@@ -57,7 +57,7 @@ class JuegoViewController: UIViewController, UICollectionViewDelegate, UICollect
     func setOracion() {
         // elegir oracion al azar
         oracionActual = listaOraciones[Int.random(in: 0..<listaOraciones.count)]
-        arrPartes = oracionActual.getPartes()
+        arrPartes = oracionActual.getPartesEnDesorden()
         curr = 0
         btnParte.setTitle(arrPartes[curr], for: .normal)
         btnParte.isHidden = false

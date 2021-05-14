@@ -22,7 +22,7 @@ class ResultadoPopOver: UIViewController {
         // Do any additional setup after loading the view.
         preferredContentSize = CGSize(width: 300, height: 200)
         
-        resultado = oracion.revisarSinComas(respuesta: respuesta)
+        resultado = oracion.revisar(respuesta: respuesta)
         
         if resultado {
             lbResultado.text = "Correcto"

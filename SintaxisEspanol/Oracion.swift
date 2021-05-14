@@ -8,7 +8,6 @@
 import UIKit
 
 class Oracion: NSObject, Codable {
-    // var partes: [String: String] = [:]
     var sujeto : String!
     var verbo : String
     var objDirecto : String!
@@ -23,16 +22,9 @@ class Oracion: NSObject, Codable {
         self.objIndirecto = objIndirecto
         self.circunstancial = circunstancial
         self.extra = extra
-        
-        // self.partes[sujeto] = "s"
-        // self.partes[verbo] = "v"
-        // self.partes[objDirecto] = "d"
-        // self.partes[objIndirecto] = "i"
-        // self.partes[circunstancial] = "c"
-        // self.partes[extra] = "e"
     }
     
-    func getRespuestaSinComas() -> [String] {
+    func getPartes() -> [String] {
         var arr = [String]()
         
         if sujeto! != "" {
@@ -60,14 +52,72 @@ class Oracion: NSObject, Codable {
         return arr
     }
     
-    func getPartes() -> [String] {
-        var arr = self.getRespuestaSinComas()
+    func getPartesEnDesorden() -> [String] {
+        var arr = self.getPartes()
         
         arr.shuffle()
         return arr
     }
     
-    func revisarSinComas(respuesta : [String]) -> Bool {
-        return respuesta == self.getRespuestaSinComas()
+    func revisar(respuesta : [String]) -> Bool {
+        var secuencia = ""
+        
+        for parte in respuesta {
+            switch parte {
+                case self.sujeto:
+                    secuencia += "s"
+                    
+                case self.verbo:
+                    secuencia += "v"
+                    
+                case self.objDirecto:
+                    secuencia += "d"
+                    
+                case self.objIndirecto:
+                    secuencia += "i"
+                    
+                case self.circunstancial:
+                    secuencia += "c"
+                    
+                case self.extra:
+                    secuencia += "e"
+                    
+                case ",":
+                    secuencia += ","
+                    
+                default:
+                    print("Error: parte de oración no reconocida")
+            }
+        }
+        
+        let resultado = validaSecuencia(secuencia, "svdice")
+        
+        return resultado
+    }
+    
+    func validaSecuencia(_ secuencia: String, _ estandar: String) -> Bool {
+        if secuencia.count == 0 {
+            return true
+            
+        } else {
+            var secuencia = secuencia
+            var estandar = estandar
+            
+            let parte = secuencia.removeFirst()
+            
+            if parte == "," {
+                return validaSecuencia(secuencia, "svdice")
+                
+            } else if estandar.contains(parte) {
+                while parte != estandar.removeFirst() {
+                    continue
+                }
+                
+                return validaSecuencia(secuencia, estandar)
+                
+            } else {
+                return false
+            }
+        }
     }
 }
