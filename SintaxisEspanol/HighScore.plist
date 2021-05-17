@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>fecha</key>
+		<string>11/03/2021</string>
+		<key>tiempo</key>
+		<string>2:34</string>
+		<key>puntaje</key>
+		<string>4/6</string>
+		<key>conComa</key>
+		<true/>
+	</dict>
+	<dict>
+		<key>fecha</key>
+		<string>12/02/2021</string>
+		<key>tiempo</key>
+		<string>3:12</string>
+		<key>puntaje</key>
+		<string>6/6</string>
+		<key>conComa</key>
+		<true/>
+	</dict>
+	<dict>
+		<key>fecha</key>
+		<string>05/02/2021</string>
+		<key>tiempo</key>
+		<string>1:15</string>
+		<key>puntaje</key>
+		<string>2/6</string>
+		<key>conComa</key>
+		<false/>
+	</dict>
+</array>
+</plist>

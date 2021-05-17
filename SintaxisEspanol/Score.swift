@@ -7,7 +7,7 @@
 
 import UIKit
 
-class Score: NSObject {
+class Score: NSObject , Codable{
     var fecha : String
     var tiempo : String
     var puntaje : String

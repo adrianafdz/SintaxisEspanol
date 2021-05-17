@@ -47,7 +47,7 @@ class JuegoViewController: UIViewController, UICollectionViewDelegate, UICollect
         numPreguntas = UserDefaults.standard.float(forKey: "NumPreg")
         
         collectionView!.contentInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
-                
+        
         setOracion()
         timerActive = true
         startTimer()
@@ -130,6 +130,7 @@ class JuegoViewController: UIViewController, UICollectionViewDelegate, UICollect
     }
     
     @IBAction func revisar(_ sender: UIButton) {
+        
         progreso.progress += Float(1/numPreguntas)
         if timerActive {
             timer.invalidate()
@@ -242,5 +243,6 @@ class JuegoViewController: UIViewController, UICollectionViewDelegate, UICollect
         
         return CGSize(width: referenceWidth, height: estimateFrame.height)
     }
+    
     
 }
