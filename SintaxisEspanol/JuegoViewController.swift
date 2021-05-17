@@ -29,6 +29,9 @@ class JuegoViewController: UIViewController, UICollectionViewDelegate, UICollect
     var arrPartes = [String]()
     var respuesta = [String]()
     
+    var respuestas = [[String]]()
+    var resultados = [Bool]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -138,28 +141,36 @@ class JuegoViewController: UIViewController, UICollectionViewDelegate, UICollect
     }
     
     func siguientePregunta() {
-        if progreso.progress == 1 {
-            print("Terminar juego")
-            /*
-            let alert = UIAlertController(title: "Fin", message: "Terminaste el quiz", preferredStyle: .alert)
-            let accion = UIAlertAction(title: "OK", style: .default, handler: {_ in
-                self.dismiss(animated: true, completion:nil)
-            })
-            alert.addAction(accion)
-            present(alert, animated: true, completion: nil)
-             */
-        } else {
-            timerActive = true
-            setOracion()
-            startTimer()
-        }
+        timerActive = true
+        setOracion()
+        startTimer()
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let vistaPop = segue.destination as! ResultadoPopOver
-        vistaPop.respuesta = respuesta
-        vistaPop.oracion = oracionActual
-        vistaPop.popoverPresentationController?.delegate = self
+        if let vistaPop = segue.destination as? ResultadoPopOver {
+            let resultado = oracionActual.revisar(respuesta: respuesta)
+            
+            respuestas.append(respuesta)
+            resultados.append(resultado)
+            
+            vistaPop.resultado = resultado
+            vistaPop.popoverPresentationController?.delegate = self
+            
+        } else if let vista = segue.destination as? ViewControllerResultadosFinales{
+            vista.respuestas = respuestas
+            vista.resultados = resultados
+            vista.tiempo = count
+        }
+    }
+    
+    @IBAction func unwind(segue: UIStoryboardSegue) {
+        if progreso.progress == 1.0 {
+            performSegue(withIdentifier: "resultadosFinales", sender: nil)
+            
+        } else {
+            siguientePregunta()
+        }
     }
     
     @objc func updateTimer() {

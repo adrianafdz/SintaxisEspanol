@@ -12,17 +12,13 @@ class ResultadoPopOver: UIViewController {
     @IBOutlet weak var lbResultado: UILabel!
     @IBOutlet weak var lbRespuesta: UILabel!
     
-    var oracion : Oracion!
     var resultado : Bool!
-    var respuesta : [String]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         preferredContentSize = CGSize(width: 300, height: 200)
-        
-        resultado = oracion.revisar(respuesta: respuesta)
         
         if resultado {
             lbResultado.text = "Correcto"
@@ -43,11 +39,4 @@ class ResultadoPopOver: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-    
-    @IBAction func continuar(_ sender: UIButton) {
-        let vistaInicial = presentingViewController as! JuegoViewController
-        vistaInicial.siguientePregunta()
-        dismiss(animated: true, completion: nil)
-    }
-    
 }
