@@ -28,7 +28,14 @@ class ResultadoPopOver: UIViewController {
             lbResultado.tintColor = UIColor.red
         }
     }
-    
+	
+	
+	@IBAction func continuar(_ sender: UIButton) {
+		let vistanterior = presentingViewController as! JuegoViewController
+		dismiss(animated: true, completion: nil)
+		vistanterior.siguientePregunta()
+	}
+	
 
     /*
     // MARK: - Navigation

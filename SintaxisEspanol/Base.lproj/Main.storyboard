@@ -39,7 +39,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Gnc-7Y-lG7" kind="show" identifier="juego" id="hGa-LL-3n0"/>
+                                    <segue destination="Gnc-7Y-lG7" kind="presentation" identifier="juego" id="hGa-LL-3n0"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Modo:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Dm-rn-9fd">
@@ -318,7 +318,7 @@
                         <outlet property="collectionView" destination="v9B-Gs-Azs" id="Ka8-d6-Fg0"/>
                         <outlet property="lbTime" destination="qii-7r-LYH" id="WkN-b9-K6A"/>
                         <outlet property="progreso" destination="cvZ-SQ-fJa" id="5sa-Kr-dz6"/>
-                        <segue destination="X7R-yw-yW8" kind="presentation" identifier="resultadosFinales" id="6Xy-Z8-49x"/>
+                        <segue destination="X7R-yw-yW8" kind="presentation" identifier="resultadosFinales" id="G4J-26-RV3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GSD-gN-XQZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -434,7 +434,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="EXm-SR-ujY" kind="unwind" unwindAction="unwindWithSegue:" id="UnL-ms-ia8"/>
+                                    <action selector="continuar:" destination="prG-Ls-TC9" eventType="touchUpInside" id="lS2-Ww-joT"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fs1-ey-cdE">
@@ -475,7 +475,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="82z-4r-BKa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <exit id="EXm-SR-ujY" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2123" y="14"/>
         </scene>

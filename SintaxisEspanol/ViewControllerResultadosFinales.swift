@@ -32,6 +32,7 @@ class ViewControllerResultadosFinales: UIViewController, UITableViewDelegate, UI
         lb_tiempo.text = String(tiempo)
         lb_puntuacion.text = String(correctas * tiempo)
     }
+	
     func SaveHighscore(){
         
             let hoy = Date()

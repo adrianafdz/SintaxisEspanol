@@ -142,10 +142,14 @@ class JuegoViewController: UIViewController, UICollectionViewDelegate, UICollect
     }
     
     func siguientePregunta() {
-        timerActive = true
-        setOracion()
-        startTimer()
-        
+		if progreso.progress == 1.0 {
+			performSegue(withIdentifier: "resultadosFinales", sender: nil)
+			
+		} else {
+			timerActive = true
+			setOracion()
+			startTimer()
+		}
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -167,7 +171,7 @@ class JuegoViewController: UIViewController, UICollectionViewDelegate, UICollect
     
     @IBAction func unwind(segue: UIStoryboardSegue) {
         if progreso.progress == 1.0 {
-            performSegue(withIdentifier: "resultadosFinales", sender: nil)
+			performSegue(withIdentifier: "resultadosFinales", sender: nil)
             
         } else {
             siguientePregunta()
