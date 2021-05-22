@@ -496,10 +496,10 @@
             </objects>
             <point key="canvasLocation" x="2102" y="73"/>
         </scene>
-        <!--View Controller-->
+        <!--About View Controller-->
         <scene sceneID="Pdu-9Y-kje">
             <objects>
-                <viewController id="wwC-7h-mRb" sceneMemberID="viewController">
+                <viewController id="wwC-7h-mRb" customClass="AboutViewController" customModule="SintaxisEspanol" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5Gt-g9-9nl">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

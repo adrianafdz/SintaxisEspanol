@@ -16,6 +16,14 @@ class ConfigViewController: UIViewController {
     let datePicker = UIDatePicker()
     let userNotificationCenter = UNUserNotificationCenter.current()
     
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return UIInterfaceOrientationMask.portrait
+    }
+      
+    override var shouldAutorotate: Bool {
+        return false
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.solicitarAutorizaciónNotificaciones()

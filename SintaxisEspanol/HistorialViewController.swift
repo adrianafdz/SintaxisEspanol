@@ -8,15 +8,21 @@
 import UIKit
 
 class HistorialViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
-
-    
-    
     
     @IBOutlet weak var tableView: UITableView!
     var listaDeScores = [Score]()
     var ruta : String!
     var Coma: Bool!
     var p: Int!
+    
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return UIInterfaceOrientationMask.portrait
+    }
+      
+    override var shouldAutorotate: Bool {
+        return false
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let nib = UINib(nibName: "HighscoreCell", bundle: nil)
@@ -27,6 +33,7 @@ class HistorialViewController: UIViewController, UITableViewDelegate, UITableVie
         ruta = Bundle.main.path(forResource: "HighScore", ofType: "plist")
         obtenerScores()
     }
+    
     func obtenerScores(){
         do{
             let data = try Data.init(contentsOf: URL(fileURLWithPath: ruta))

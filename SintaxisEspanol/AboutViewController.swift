@@ -1,19 +1,14 @@
 //
-//  ResultadoPopOver.swift
+//  AboutViewController.swift
 //  SintaxisEspanol
 //
-//  Created by user188711 on 5/4/21.
+//  Created by user188711 on 5/22/21.
 //
 
 import UIKit
 
-class ResultadoPopOver: UIViewController {
+class AboutViewController: UIViewController {
 
-    @IBOutlet weak var lbResultado: UILabel!
-    @IBOutlet weak var lbRespuesta: UILabel!
-    
-    var resultado : Bool!
-    
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         return UIInterfaceOrientationMask.portrait
     }
@@ -26,24 +21,8 @@ class ResultadoPopOver: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        preferredContentSize = CGSize(width: 300, height: 200)
-        
-        if resultado {
-            lbResultado.text = "Correcto"
-            lbResultado.tintColor = UIColor.green
-        } else {
-            lbResultado.text = "Incorrecto"
-            lbResultado.tintColor = UIColor.red
-        }
     }
-	
-	
-	@IBAction func continuar(_ sender: UIButton) {
-		let vistanterior = presentingViewController as! JuegoViewController
-		dismiss(animated: true, completion: nil)
-		vistanterior.siguientePregunta()
-	}
-	
+    
 
     /*
     // MARK: - Navigation
@@ -54,4 +33,5 @@ class ResultadoPopOver: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+
 }

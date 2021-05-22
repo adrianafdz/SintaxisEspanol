@@ -32,6 +32,14 @@ class JuegoViewController: UIViewController, UICollectionViewDelegate, UICollect
     var respuestas = [[String]]()
     var resultados = [Bool]()
     
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return UIInterfaceOrientationMask.portrait
+    }
+      
+    override var shouldAutorotate: Bool {
+        return false
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

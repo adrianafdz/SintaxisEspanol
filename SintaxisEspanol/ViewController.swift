@@ -21,6 +21,14 @@ class ViewController: UIViewController {
     @IBOutlet weak var btnModo: UIButton!
     @IBOutlet weak var btnHistorial: UIButton!
     
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return UIInterfaceOrientationMask.portrait
+    }
+      
+    override var shouldAutorotate: Bool {
+        return false
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
