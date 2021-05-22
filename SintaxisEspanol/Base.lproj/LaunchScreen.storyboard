@@ -1,7 +1,8 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -13,13 +14,38 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="dqk-Rv-5Vx">
+                                <rect key="frame" x="75" y="233.5" width="225" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="DEn-1a-kXN"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tec-logo" translatesAutoresizingMaskIntoConstraints="NO" id="aAp-Yv-TuA">
+                                <rect key="frame" x="100" y="459" width="175" height="79"/>
+                            </imageView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" red="0.96854287390000005" green="0.96868163350000003" blue="0.96851247549999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="aAp-Yv-TuA" secondAttribute="bottom" constant="129" id="9jh-ZN-6Gg"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dqk-Rv-5Vx" secondAttribute="trailing" constant="75" id="Epy-q8-bCP"/>
+                            <constraint firstItem="dqk-Rv-5Vx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="75" id="Nqf-tq-NAU"/>
+                            <constraint firstItem="dqk-Rv-5Vx" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="RAs-gO-fYC"/>
+                            <constraint firstItem="aAp-Yv-TuA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="100" id="ZQU-Vr-Ktb"/>
+                            <constraint firstItem="aAp-Yv-TuA" firstAttribute="top" secondItem="dqk-Rv-5Vx" secondAttribute="bottom" constant="25.5" id="dmY-Uy-8Dg"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="aAp-Yv-TuA" secondAttribute="trailing" constant="100" id="png-Bd-vbx"/>
+                            <constraint firstItem="dqk-Rv-5Vx" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="yVc-tI-0Cl"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="381.60000000000002" y="404.34782608695656"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="logo" width="1182" height="1182"/>
+        <image name="tec-logo" width="2698" height="714"/>
+    </resources>
 </document>

@@ -52,12 +52,10 @@ class ViewController: UIViewController {
             print("Error al cargar archivo")
         }
         
-        print(Configuracion.modo)
     }
 
     @IBAction func toggleModo(_ sender: UIButton) {
         Configuracion.modo = !Configuracion.modo
-        print(Configuracion.modo)
         btnModo.setTitle(Configuracion.modo ? "Con comas" : "Sin comas", for: .normal)
     }
     
