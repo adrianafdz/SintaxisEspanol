@@ -505,10 +505,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K3m-TK-Gck">
-                                <rect key="frame" x="6" y="0.0" width="314" height="548"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AKW-sM-iK0">
-                                        <rect key="frame" x="0.0" y="0.0" width="314" height="600"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="314" height="550"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sobre el uso de las comas y esta aplicación" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VbZ-rC-vI1">
                                                 <rect key="frame" x="20" y="45" width="274" height="57.5"/>
@@ -578,7 +578,7 @@
                                             <constraint firstItem="r29-Vg-22M" firstAttribute="leading" secondItem="AKW-sM-iK0" secondAttribute="leading" constant="25" id="AZU-Pn-PyZ"/>
                                             <constraint firstAttribute="trailing" secondItem="ZWI-nC-OrU" secondAttribute="trailing" constant="25" id="DNE-u2-Mk2"/>
                                             <constraint firstItem="dH2-Bm-gNl" firstAttribute="top" secondItem="VbZ-rC-vI1" secondAttribute="bottom" constant="20" id="V3A-5v-1J8"/>
-                                            <constraint firstAttribute="height" constant="600" id="V3N-ji-77n"/>
+                                            <constraint firstAttribute="height" constant="550" id="V3N-ji-77n"/>
                                             <constraint firstAttribute="trailing" secondItem="dH2-Bm-gNl" secondAttribute="trailing" constant="25" id="Wkm-WX-gjV"/>
                                             <constraint firstAttribute="trailing" secondItem="r29-Vg-22M" secondAttribute="trailing" constant="25" id="aOY-bK-8Dr"/>
                                             <constraint firstAttribute="trailing" secondItem="VbZ-rC-vI1" secondAttribute="trailing" constant="20" id="cie-7g-Ivq"/>
@@ -590,13 +590,53 @@
                                             <constraint firstItem="ZWI-nC-OrU" firstAttribute="leading" secondItem="AKW-sM-iK0" secondAttribute="leading" constant="25" id="wW3-y7-cci"/>
                                         </constraints>
                                     </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zXl-t5-rnw">
+                                        <rect key="frame" x="0.0" y="550" width="314" height="365"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uMc-Jf-Ou7">
+                                                <rect key="frame" x="25" y="20" width="264" height="143.5"/>
+                                                <string key="text">Organiza y delimita tus ideas ha sido desarrollado por estudiantes del Tecnológico de Monterrey durante el semestre Febrero Junio 2021, como parte del curso Desarrollo de Aplicaciones para Dispositivos Móviles y asesorados por la maestra Yolanda Martínez Treviño.</string>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <color key="textColor" red="0.22352941179999999" green="0.31372549020000001" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NKb-a0-0hu">
+                                                <rect key="frame" x="25" y="183.5" width="264" height="72"/>
+                                                <string key="text">Desarrolladores:Adriana Fernández Lopez Jair Antonio Bautista LorancaJuventino Gutiérrez Romo </string>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <color key="textColor" red="0.22352941179999999" green="0.31372549020000001" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Organiza y delimita tus ideas se distribuye como está de manera gratuita y se prohíbe su distribución y uso con fines de lucro." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RyF-cm-3n0">
+                                                <rect key="frame" x="25" y="275.5" width="264" height="72"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <color key="textColor" red="0.22352941179999999" green="0.31372549020000001" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.77217274899999999" green="0.81282758710000003" blue="0.86882472040000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="uMc-Jf-Ou7" secondAttribute="trailing" constant="25" id="BgC-6X-JyM"/>
+                                            <constraint firstAttribute="trailing" secondItem="RyF-cm-3n0" secondAttribute="trailing" constant="25" id="EmI-54-xN3"/>
+                                            <constraint firstItem="NKb-a0-0hu" firstAttribute="leading" secondItem="zXl-t5-rnw" secondAttribute="leading" constant="25" id="GPl-w1-KPa"/>
+                                            <constraint firstItem="uMc-Jf-Ou7" firstAttribute="top" secondItem="zXl-t5-rnw" secondAttribute="top" constant="20" id="HU2-fK-cli"/>
+                                            <constraint firstItem="RyF-cm-3n0" firstAttribute="top" secondItem="NKb-a0-0hu" secondAttribute="bottom" constant="20" id="Vkn-rM-bZb"/>
+                                            <constraint firstAttribute="trailing" secondItem="NKb-a0-0hu" secondAttribute="trailing" constant="25" id="maK-z3-vtT"/>
+                                            <constraint firstItem="RyF-cm-3n0" firstAttribute="leading" secondItem="zXl-t5-rnw" secondAttribute="leading" constant="25" id="ruD-dS-M6g"/>
+                                            <constraint firstItem="uMc-Jf-Ou7" firstAttribute="leading" secondItem="zXl-t5-rnw" secondAttribute="leading" constant="25" id="y4h-VD-GA7"/>
+                                            <constraint firstAttribute="height" constant="365" id="zBF-if-p7u"/>
+                                            <constraint firstItem="NKb-a0-0hu" firstAttribute="top" secondItem="uMc-Jf-Ou7" secondAttribute="bottom" constant="20" id="zBG-Ln-8Wo"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" red="0.99207025770000001" green="0.99221223589999996" blue="0.99203914400000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="zXl-t5-rnw" secondAttribute="trailing" id="9ci-kn-Iec"/>
                                     <constraint firstAttribute="trailing" secondItem="AKW-sM-iK0" secondAttribute="trailing" id="A01-mk-7Rq"/>
-                                    <constraint firstItem="AKW-sM-iK0" firstAttribute="bottom" secondItem="K3m-TK-Gck" secondAttribute="bottom" id="IIR-DS-jR2"/>
-                                    <constraint firstAttribute="bottom" secondItem="AKW-sM-iK0" secondAttribute="bottom" id="R4g-I6-ytD"/>
+                                    <constraint firstItem="zXl-t5-rnw" firstAttribute="top" secondItem="AKW-sM-iK0" secondAttribute="bottom" id="Wkt-ks-IIb"/>
+                                    <constraint firstAttribute="bottom" secondItem="zXl-t5-rnw" secondAttribute="bottom" id="foW-L5-fqJ"/>
                                     <constraint firstItem="AKW-sM-iK0" firstAttribute="leading" secondItem="K3m-TK-Gck" secondAttribute="leading" id="hU1-wd-wnM"/>
+                                    <constraint firstItem="zXl-t5-rnw" firstAttribute="leading" secondItem="K3m-TK-Gck" secondAttribute="leading" id="o3D-L7-mWd"/>
                                     <constraint firstItem="AKW-sM-iK0" firstAttribute="top" secondItem="K3m-TK-Gck" secondAttribute="top" id="pat-cL-u2D"/>
                                     <constraint firstItem="AKW-sM-iK0" firstAttribute="trailing" secondItem="K3m-TK-Gck" secondAttribute="trailing" id="vL5-aP-8Fr"/>
                                 </constraints>
@@ -608,7 +648,7 @@
                             <constraint firstItem="AKW-sM-iK0" firstAttribute="width" secondItem="5Gt-g9-9nl" secondAttribute="width" multiplier="0.98125" id="3Rt-VP-T0f"/>
                             <constraint firstItem="K3m-TK-Gck" firstAttribute="top" secondItem="Ldy-oA-Fs9" secondAttribute="top" id="6qo-MS-RQk"/>
                             <constraint firstItem="K3m-TK-Gck" firstAttribute="trailing" secondItem="Ldy-oA-Fs9" secondAttribute="trailing" id="BlM-et-zwg"/>
-                            <constraint firstItem="K3m-TK-Gck" firstAttribute="leading" secondItem="Ldy-oA-Fs9" secondAttribute="leading" constant="6" id="MZ2-TY-3Xh"/>
+                            <constraint firstItem="K3m-TK-Gck" firstAttribute="leading" secondItem="Ldy-oA-Fs9" secondAttribute="leading" id="MZ2-TY-3Xh"/>
                             <constraint firstItem="K3m-TK-Gck" firstAttribute="bottom" secondItem="Ldy-oA-Fs9" secondAttribute="bottom" id="wvB-M8-mph"/>
                         </constraints>
                     </view>
@@ -616,7 +656,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wdm-5n-AVx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1238" y="1771"/>
+            <point key="canvasLocation" x="1237.5" y="1770.4225352112676"/>
         </scene>
         <!--Config View Controller-->
         <scene sceneID="uDZ-Dr-YF3">
