@@ -36,7 +36,7 @@ class JuegoViewController: UIViewController, UICollectionViewDelegate, UICollect
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        btnComa.isHidden = Configuracion.modo
+        btnComa.isHidden = !Configuracion.modo
         
         btnComa.layer.cornerRadius = 5
         btnRevisar.layer.cornerRadius = 5
@@ -196,9 +196,10 @@ class JuegoViewController: UIViewController, UICollectionViewDelegate, UICollect
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "celda", for: indexPath) as! TarjetaCollectionViewCell
         
         cell.configure(with: respuesta[indexPath.row])
-        cell.layer.borderWidth = 2
-        cell.layer.borderColor = UIColor.purple.cgColor
+        cell.layer.borderWidth = 1
+        cell.layer.borderColor = UIColor.gray.cgColor
         cell.layer.cornerRadius = 5
+        cell.layer.backgroundColor = CGColor(red: 185/255, green: 196/255, blue: 213/255, alpha: 1)
         cell.maxWidth = collectionView.bounds.width - 20
         
         return cell

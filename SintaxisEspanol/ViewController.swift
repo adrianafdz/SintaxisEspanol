@@ -8,8 +8,8 @@
 import UIKit
 
 struct Configuracion {
-    // true sin comas, false con
-    static var modo = true
+    // false sin comas, true con
+    static var modo = false
     static var numPreg = 5
 }
 
@@ -34,13 +34,13 @@ class ViewController: UIViewController {
         btnHistorial.layer.borderWidth = 1
         btnHistorial.layer.borderColor = CGColor.init(red: 0, green: 0, blue: 0, alpha: 0.5)
         
-        btnModo.setTitle(Configuracion.modo ? "Sin comas" : "Con comas", for: .normal)
-        
         // Configuración
         let defaults = UserDefaults.standard
         
         Configuracion.modo = defaults.bool(forKey: "Modo")
         Configuracion.numPreg = defaults.integer(forKey: "NumPreg")
+        
+        btnModo.setTitle(Configuracion.modo ? "Con comas" : "Sin comas", for: .normal)
         
         // Cargar oraciones
         let ruta = Bundle.main.path(forResource: "oraciones", ofType: "json")!
@@ -51,11 +51,14 @@ class ViewController: UIViewController {
         } catch {
             print("Error al cargar archivo")
         }
+        
+        print(Configuracion.modo)
     }
 
     @IBAction func toggleModo(_ sender: UIButton) {
         Configuracion.modo = !Configuracion.modo
-        btnModo.setTitle(Configuracion.modo ? "Sin comas" : "Con comas", for: .normal)
+        print(Configuracion.modo)
+        btnModo.setTitle(Configuracion.modo ? "Con comas" : "Sin comas", for: .normal)
     }
     
     @IBAction func unwindConfig(for unwindSegue: UIStoryboardSegue, towards subsequentVC: UIViewController) {
