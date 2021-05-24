@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3B1BBC2A2651EAF100F606C7 /* ViewControllerResultadosFinales.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1BBC292651EAF100F606C7 /* ViewControllerResultadosFinales.swift */; };
 		3BEB485E263071AA00E8CECC /* ConfigViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BEB485D263071AA00E8CECC /* ConfigViewController.swift */; };
+		3BF2F5EC265BF950003A4145 /* ResultadoCelda.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF2F5EB265BF950003A4145 /* ResultadoCelda.swift */; };
 		9A116D542641AFE700E10B0E /* TarjetaCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A116D532641AFE700E10B0E /* TarjetaCollectionViewCell.swift */; };
 		9A116D572641B21000E10B0E /* LeftAlignedFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A116D562641B21000E10B0E /* LeftAlignedFlowLayout.swift */; };
 		9A2C8871262296E40009EB69 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2C8870262296E40009EB69 /* AppDelegate.swift */; };
@@ -32,6 +33,7 @@
 /* Begin PBXFileReference section */
 		3B1BBC292651EAF100F606C7 /* ViewControllerResultadosFinales.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerResultadosFinales.swift; sourceTree = "<group>"; };
 		3BEB485D263071AA00E8CECC /* ConfigViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigViewController.swift; sourceTree = "<group>"; };
+		3BF2F5EB265BF950003A4145 /* ResultadoCelda.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultadoCelda.swift; sourceTree = "<group>"; };
 		9A116D532641AFE700E10B0E /* TarjetaCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TarjetaCollectionViewCell.swift; sourceTree = "<group>"; };
 		9A116D562641B21000E10B0E /* LeftAlignedFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftAlignedFlowLayout.swift; sourceTree = "<group>"; };
 		9A2C886D262296E40009EB69 /* SintaxisEspanol.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SintaxisEspanol.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -88,6 +90,7 @@
 				9A2C8870262296E40009EB69 /* AppDelegate.swift */,
 				9A2C8872262296E40009EB69 /* SceneDelegate.swift */,
 				9A2C8876262296E40009EB69 /* Main.storyboard */,
+				3BF2F5EB265BF950003A4145 /* ResultadoCelda.swift */,
 				9A756E01265994090077AB4B /* AboutViewController.swift */,
 				3B1BBC292651EAF100F606C7 /* ViewControllerResultadosFinales.swift */,
 				9AA4300D2641FADC0052F8CB /* ResultadoPopOver.swift */,
@@ -192,6 +195,7 @@
 			files = (
 				9A2C8875262296E40009EB69 /* ViewController.swift in Sources */,
 				9A2C88862622A3440009EB69 /* JuegoViewController.swift in Sources */,
+				3BF2F5EC265BF950003A4145 /* ResultadoCelda.swift in Sources */,
 				DD7121802631148A001AA873 /* Score.swift in Sources */,
 				3BEB485E263071AA00E8CECC /* ConfigViewController.swift in Sources */,
 				3B1BBC2A2651EAF100F606C7 /* ViewControllerResultadosFinales.swift in Sources */,

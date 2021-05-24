@@ -12,7 +12,8 @@ class ResultadoPopOver: UIViewController {
     @IBOutlet weak var lbResultado: UILabel!
     @IBOutlet weak var lbRespuesta: UILabel!
     
-    var resultado : Bool!
+    var resultado: Bool!
+	var colorFondo: UIColor!
     
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         return UIInterfaceOrientationMask.portrait
@@ -30,10 +31,19 @@ class ResultadoPopOver: UIViewController {
         
         if resultado {
             lbResultado.text = "Correcto"
-            lbResultado.tintColor = UIColor.green
+			view.backgroundColor = UIColor(
+				red: 206.0 / 255.0,
+				green: 222.0 / 255.0,
+				blue: 197.0 / 255.0,
+				alpha: 255)
+			
         } else {
             lbResultado.text = "Incorrecto"
-            lbResultado.tintColor = UIColor.red
+			view.backgroundColor = UIColor(
+				red: 242.0 / 255.0,
+				green: 201.0 / 255.0,
+				blue: 201.0 / 255.0,
+				alpha: 255)
         }
     }
 	

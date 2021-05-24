@@ -67,18 +67,42 @@ class ViewControllerResultadosFinales: UIViewController, UITableViewDelegate, UI
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return respuestas.count
     }
+	
+	func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+		return UITableView.automaticDimension
+	}
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "resultado", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "resultado", for: indexPath) as! ResultadoCelda
         let index = indexPath.row
         
         var oracion = ""
         
         for parte in respuestas[index] {
             oracion += parte
+			oracion += " "
         }
         
-        cell.textLabel?.text = oracion
+		cell.oracion_resultado.text = oracion
+		
+		var color: UIColor
+		
+		if resultados[index] {
+			color = UIColor(
+				red: 206.0 / 255.0,
+				green: 222.0 / 255.0,
+				blue: 197.0 / 255.0,
+				alpha: 255)
+			
+		} else {
+			color = UIColor(
+				red: 242.0 / 255.0,
+				green: 201.0 / 255.0,
+				blue: 201.0 / 255.0,
+				alpha: 255)
+		}
+		
+		cell.backgroundColor = color
         
         return cell
     }

@@ -163,12 +163,13 @@ class JuegoViewController: UIViewController, UICollectionViewDelegate, UICollect
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let vistaPop = segue.destination as? ResultadoPopOver {
             let resultado = oracionActual.revisar(respuesta: respuesta)
-            
+			
             respuestas.append(respuesta)
             resultados.append(resultado)
             
             vistaPop.resultado = resultado
             vistaPop.popoverPresentationController?.delegate = self
+				
             
         } else if let vista = segue.destination as? ViewControllerResultadosFinales{
             vista.respuestas = respuestas
