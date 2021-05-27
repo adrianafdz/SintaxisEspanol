@@ -60,6 +60,12 @@ class JuegoViewController: UIViewController, UICollectionViewDelegate, UICollect
         timerActive = true
         startTimer()
     }
+	
+	override func viewDidAppear(_ animated: Bool) {
+		if progreso.progress == 1 {
+			dismiss(animated: true, completion: nil)
+		}
+	}
     
     func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
         return .none
@@ -67,7 +73,14 @@ class JuegoViewController: UIViewController, UICollectionViewDelegate, UICollect
     
     func setOracion() {
         // elegir oracion al azar
-        oracionActual = listaOraciones[Int.random(in: 0..<listaOraciones.count)]
+		oracionActual = listaOraciones[Int.random(in: 0..<listaOraciones.count)]
+		
+		if Configuracion.modo == false {
+			while oracionActual.extra != "" {
+				oracionActual = listaOraciones[Int.random(in: 0..<listaOraciones.count)]
+			}
+		}
+		
         arrPartes = oracionActual.getPartesEnDesorden()
         curr = 0
         btnParte.setTitle(arrPartes[curr], for: .normal)
