@@ -32,34 +32,29 @@ class ViewControllerResultadosFinales: UIViewController, UITableViewDelegate, UI
         // Do any additional setup after loading the view.
         
         var correctas = 0
-        puntos = String(correctas * tiempo)
+        
         for resultado in resultados {
             correctas += resultado ? 1 : 0
         }
-        
+        puntos = String(correctas * tiempo)
         lb_respuestas.text = String(correctas)
         lb_tiempo.text = String(tiempo)
         lb_puntuacion.text = String(correctas * tiempo)
+        SaveHighscore()
     }
 	
     func SaveHighscore(){
         
             let hoy = Date()
             let formatter = DateFormatter()
-            formatter.dateStyle = .full
+            formatter.dateStyle = .short
             let dateT = formatter.string(from: hoy)
-            let score = Score(fecha: dateT , tiempo: String(tiempo), puntaje: puntos , conComa: Configuracion.modo)
-            
-            let encoder = PropertyListEncoder()
-            encoder.outputFormat = .xml
-            let ruta = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("HighScore.plist")
+            let NewScore = Score(tiempo: String(tiempo), conComa: Configuracion.modo, fecha: dateT,  puntaje: String(puntos) )
+        
             do{
-                let data = try encoder.encode(score)
-                try data.write(to: ruta)
-                print("saved score")
-            }
-            catch{
-                print(error)
+                try PersistenceHelper.create(score: NewScore)
+            }catch{
+                print("error saving highscore")
             }
         
     }

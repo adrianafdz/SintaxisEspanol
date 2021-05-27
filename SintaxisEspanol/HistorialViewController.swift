@@ -11,7 +11,6 @@ class HistorialViewController: UIViewController, UITableViewDelegate, UITableVie
     
     @IBOutlet weak var tableView: UITableView!
     var listaDeScores = [Score]()
-    var ruta : String!
     var Coma: Bool!
     var p: Int!
     
@@ -25,27 +24,29 @@ class HistorialViewController: UIViewController, UITableViewDelegate, UITableVie
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        obtenerScores()
         let nib = UINib(nibName: "HighscoreCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "highscoreCell")
         Coma = false
         p = 0
         // Do any additional setup after loading the view.
-        ruta = Bundle.main.path(forResource: "HighScore", ofType: "plist")
-        obtenerScores()
     }
     
-    func obtenerScores(){
+     private func obtenerScores(){
         do{
-            let data = try Data.init(contentsOf: URL(fileURLWithPath: ruta))
-            listaDeScores = try PropertyListDecoder().decode([Score].self, from: data)
-        }catch{
-            print("error al cargar el archivo")
+            listaDeScores = try PersistenceHelper.loadScores()
+        } catch {
+            print("error obtener scores")
         }
-        /*
-         if let score = getPlist(withName: "HighScore"){
-             listaDeScores = score
-         }*/
-            }
+    }
+    
+    private func deleteScore(indexPath: IndexPath){
+        do {
+            try PersistenceHelper.delete(score: indexPath.row)
+        } catch {
+            print("error borrar")
+        }
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return listaDeScores.filter{$0.conComa == Coma}.count
@@ -53,10 +54,30 @@ class HistorialViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
      func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let filteredScores = listaDeScores.filter{$0.conComa == Coma}
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "highscoreCell") as! HighscoreCell
-        cell.customInit(fecha: listaDeScores[indexPath.row].fecha, tiempo: listaDeScores[indexPath.row].tiempo, Puntaje: listaDeScores[indexPath.row].puntaje)
+        
+            cell.customInit(fecha: filteredScores[indexPath.row].fecha, tiempo: filteredScores[indexPath.row].tiempo, Puntaje: filteredScores[indexPath.row].puntaje)
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        
+        switch editingStyle{
+        case .delete:
+            print("delete")
+            listaDeScores.remove(at: indexPath.row)
+            deleteScore(indexPath: indexPath)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+        case .insert:
+            print("insert")
+        default:
+            print(".")
+        }
+    }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 50
     }
@@ -82,13 +103,4 @@ class HistorialViewController: UIViewController, UITableViewDelegate, UITableVie
         // Pass the selected object to the new view controller.
     }
     */
-    /*func getPlist(withName name: String) -> [Score]?
-    {
-        if let ruta = Bundle.main.path(forResource: name, ofType: "plist"),
-            let data = FileManager.default.contents(atPath: ruta)
-        {
-            return (try? PropertyListSerialization.propertyList(from: data, options: .mutableContainersAndLeaves, format: nil)) as? [Score]
-            }
-        return nil
-    }*/
 }

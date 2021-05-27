@@ -59,7 +59,8 @@ class ViewController: UIViewController {
         } catch {
             print("Error al cargar archivo")
         }
-        
+        //print path
+        print(FileManager.getDocumentsDirectory())
     }
 
     @IBAction func toggleModo(_ sender: UIButton) {

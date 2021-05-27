@@ -27,7 +27,8 @@
 		DD7121802631148A001AA873 /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD71217F2631148A001AA873 /* Score.swift */; };
 		DD71218526311EE6001AA873 /* HighscoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD71218326311EE6001AA873 /* HighscoreCell.swift */; };
 		DD71218626311EE6001AA873 /* HighscoreCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD71218426311EE6001AA873 /* HighscoreCell.xib */; };
-		DDB9F80926526B6000125082 /* HighScore.plist in Resources */ = {isa = PBXBuildFile; fileRef = DDB9F80826526B5F00125082 /* HighScore.plist */; };
+		DDB9F80E265EDEF600125082 /* FileManager+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB9F80D265EDEF600125082 /* FileManager+Ext.swift */; };
+		DDB9F811265EE42900125082 /* PersistenciaHelp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB9F810265EE42900125082 /* PersistenciaHelp.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,7 +54,8 @@
 		DD71217F2631148A001AA873 /* Score.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Score.swift; sourceTree = "<group>"; };
 		DD71218326311EE6001AA873 /* HighscoreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighscoreCell.swift; sourceTree = "<group>"; };
 		DD71218426311EE6001AA873 /* HighscoreCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HighscoreCell.xib; sourceTree = "<group>"; };
-		DDB9F80826526B5F00125082 /* HighScore.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = HighScore.plist; sourceTree = "<group>"; };
+		DDB9F80D265EDEF600125082 /* FileManager+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+Ext.swift"; sourceTree = "<group>"; };
+		DDB9F810265EE42900125082 /* PersistenciaHelp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenciaHelp.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,12 +95,13 @@
 				3BF2F5EB265BF950003A4145 /* ResultadoCelda.swift */,
 				9A756E01265994090077AB4B /* AboutViewController.swift */,
 				3B1BBC292651EAF100F606C7 /* ViewControllerResultadosFinales.swift */,
+				DDB9F810265EE42900125082 /* PersistenciaHelp.swift */,
+				DDB9F80D265EDEF600125082 /* FileManager+Ext.swift */,
 				9AA4300D2641FADC0052F8CB /* ResultadoPopOver.swift */,
 				DD71217C2630F237001AA873 /* HistorialViewController.swift */,
 				DD71217F2631148A001AA873 /* Score.swift */,
 				9A2C8874262296E40009EB69 /* ViewController.swift */,
 				3BEB485D263071AA00E8CECC /* ConfigViewController.swift */,
-				DDB9F80826526B5F00125082 /* HighScore.plist */,
 				9AD0392A262DEA5E00714659 /* Oracion.swift */,
 				9AD03927262DEA3300714659 /* oraciones.json */,
 				9A2C88852622A3440009EB69 /* JuegoViewController.swift */,
@@ -178,7 +181,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A2C887D262296E50009EB69 /* LaunchScreen.storyboard in Resources */,
-				DDB9F80926526B6000125082 /* HighScore.plist in Resources */,
 				9AD03928262DEA3300714659 /* oraciones.json in Resources */,
 				9A2C887A262296E50009EB69 /* Assets.xcassets in Resources */,
 				9A2C8878262296E40009EB69 /* Main.storyboard in Resources */,
@@ -194,12 +196,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A2C8875262296E40009EB69 /* ViewController.swift in Sources */,
+				DDB9F811265EE42900125082 /* PersistenciaHelp.swift in Sources */,
 				9A2C88862622A3440009EB69 /* JuegoViewController.swift in Sources */,
 				3BF2F5EC265BF950003A4145 /* ResultadoCelda.swift in Sources */,
 				DD7121802631148A001AA873 /* Score.swift in Sources */,
 				3BEB485E263071AA00E8CECC /* ConfigViewController.swift in Sources */,
 				3B1BBC2A2651EAF100F606C7 /* ViewControllerResultadosFinales.swift in Sources */,
 				9A116D572641B21000E10B0E /* LeftAlignedFlowLayout.swift in Sources */,
+				DDB9F80E265EDEF600125082 /* FileManager+Ext.swift in Sources */,
 				9A116D542641AFE700E10B0E /* TarjetaCollectionViewCell.swift in Sources */,
 				9AD0392B262DEA5E00714659 /* Oracion.swift in Sources */,
 				DD71218526311EE6001AA873 /* HighscoreCell.swift in Sources */,

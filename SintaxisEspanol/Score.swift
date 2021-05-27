@@ -8,16 +8,19 @@
 import UIKit
 
 class Score: NSObject , Codable{
-    var fecha : String
-    var tiempo : String
-    var puntaje : String
-    var conComa : Bool
     
-    init(fecha : String, tiempo : String, puntaje : String, conComa : Bool) {
+    var tiempo : String
+    var conComa : Bool
+    var fecha : String
+    var puntaje : String
+    
+    init(tiempo : String, conComa : Bool, fecha : String, puntaje : String) {
         
-        self.fecha = fecha
+        
         self.tiempo = tiempo
-        self.puntaje = puntaje
         self.conComa = conComa
+        self.fecha = fecha
+        self.puntaje = puntaje
+        
     }
 }
