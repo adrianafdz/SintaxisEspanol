@@ -706,6 +706,9 @@ Juventino Gutiérrez Romo </string>
                                             </label>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QXd-4Z-3Vy">
                                                 <rect key="frame" x="166.5" y="0.0" width="51" height="31"/>
+                                                <connections>
+                                                    <action selector="activarNotificaciones:" destination="ZnM-zN-dqd" eventType="valueChanged" id="2d3-2Y-85W"/>
+                                                </connections>
                                             </switch>
                                         </subviews>
                                     </stackView>
@@ -755,7 +758,7 @@ Juventino Gutiérrez Romo </string>
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="vNb-VT-v1B" kind="unwind" unwindAction="unwindConfigFor:towards:" id="YIP-ms-ddH"/>
+                                    <action selector="guardar:" destination="ZnM-zN-dqd" eventType="touchUpInside" id="mYI-eD-buU"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -783,7 +786,6 @@ Juventino Gutiérrez Romo </string>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q0v-Zd-3Bw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <exit id="vNb-VT-v1B" userLabel="Exit" sceneMemberID="exit"/>
                 <tapGestureRecognizer id="xPJ-BG-3yQ">
                     <connections>
                         <action selector="quitarTeclado:" destination="ZnM-zN-dqd" id="rEC-RG-skp"/>

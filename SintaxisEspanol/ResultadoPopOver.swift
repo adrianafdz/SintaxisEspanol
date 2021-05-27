@@ -13,6 +13,7 @@ class ResultadoPopOver: UIViewController {
     @IBOutlet weak var lbRespuesta: UILabel!
     
     var resultado: Bool!
+	var feedback: String!
 	var colorFondo: UIColor!
     
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
@@ -45,6 +46,8 @@ class ResultadoPopOver: UIViewController {
 				blue: 201.0 / 255.0,
 				alpha: 255)
         }
+		
+		lbRespuesta.text = feedback
     }
 	
 	

@@ -143,8 +143,8 @@ class JuegoViewController: UIViewController, UICollectionViewDelegate, UICollect
         if timerActive {
             timer.invalidate()
             
-            respuesta.removeAll()
-            collectionView.reloadData()
+//            respuesta.removeAll()
+//            collectionView.reloadData()
             timerActive = !timerActive
         }
     }
@@ -154,6 +154,9 @@ class JuegoViewController: UIViewController, UICollectionViewDelegate, UICollect
 			performSegue(withIdentifier: "resultadosFinales", sender: nil)
 			
 		} else {
+			respuesta.removeAll()
+			collectionView.reloadData()
+			
 			timerActive = true
 			setOracion()
 			startTimer()
@@ -162,12 +165,16 @@ class JuegoViewController: UIViewController, UICollectionViewDelegate, UICollect
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let vistaPop = segue.destination as? ResultadoPopOver {
-            let resultado = oracionActual.revisar(respuesta: respuesta)
+			let revision = oracionActual.revisar(respuesta: respuesta)
+			
+			let resultado = revision.0
+			let feedback = revision.1
 			
             respuestas.append(respuesta)
             resultados.append(resultado)
             
             vistaPop.resultado = resultado
+			vistaPop.feedback = feedback
             vistaPop.popoverPresentationController?.delegate = self
 				
             

@@ -15,6 +15,7 @@ class ConfigViewController: UIViewController {
     
     let datePicker = UIDatePicker()
     let userNotificationCenter = UNUserNotificationCenter.current()
+	var horaNotificacion: Date!
     
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         return UIInterfaceOrientationMask.portrait
@@ -26,9 +27,6 @@ class ConfigViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.solicitarAutorizaciónNotificaciones()
-        self.mandarNotificacion()
-
         // Do any additional setup after loading the view.
         
         // Asignar selector de fecha al campo de texto de hora
@@ -41,38 +39,77 @@ class ConfigViewController: UIViewController {
         tf_numero_preguntas.text = String(defaults.integer(forKey: "NumPreg"))
         tf_hora.text = defaults.string(forKey: "Hora")
     }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let defaults = UserDefaults.standard
-        
-        defaults.set(sw_notificaciones.isOn, forKey: "Notificacion")
-        
-        if let num = Int(tf_numero_preguntas.text!) {
-            defaults.set(num, forKey: "NumPreg")
-            
-        } else {
-            let alert = UIAlertController(
-                title: "Error",
-                message: "El campo de número de preguntas no puede estar vacío",
-                preferredStyle: .alert)
-            
-            let accion = UIAlertAction(
-                title: "OK",
-                style: .default,
-                handler: {_ in
-                    self.dismiss(animated: true, completion:nil)
-            })
-            
-            alert.addAction(accion)
-            present(alert, animated: true, completion: nil)
-        }
-        
-        defaults.set(tf_hora.text, forKey: "Hora")
-    }
+	
+	@IBAction func guardar(_ sender: UIButton) {
+		let defaults = UserDefaults.standard
+		
+		defaults.set(sw_notificaciones.isOn, forKey: "Notificacion")
+		
+		var error = false
+		
+		if let num = Int(tf_numero_preguntas.text!) {
+			defaults.set(num, forKey: "NumPreg")
+			
+		} else {
+			error = true
+			let alert = UIAlertController(
+				title: "Error",
+				message: "El campo de número de preguntas no puede estar vacío",
+				preferredStyle: .alert)
+			
+			let accion = UIAlertAction(
+				title: "OK",
+				style: .default,
+				handler: {_ in
+					self.dismiss(animated: true, completion: nil)
+				})
+			
+			alert.addAction(accion)
+			present(alert, animated: true, completion: nil)
+		}
+		
+		if (tf_hora.text != "") {
+			if (sw_notificaciones.isOn) {
+				defaults.set(tf_hora.text, forKey: "Hora")
+				mandarNotificacion()
+			}
+			
+		} else {
+			error = true
+			let alert = UIAlertController(
+				title: "Error",
+				message: "Para activar las notificaciones debe especificar una hora",
+				preferredStyle: .alert)
+			
+			let accion = UIAlertAction(
+				title: "OK",
+				style: .default,
+				handler: {_ in
+					self.dismiss(animated: true, completion: nil)
+				})
+			
+			alert.addAction(accion)
+			present(alert, animated: true, completion: nil)
+		}
+		
+		if (!error) {
+			dismiss(animated: true, completion: nil)
+		}
+	}
     
     // Métodos para notificaciones
     
-    func solicitarAutorizaciónNotificaciones() {
+	@IBAction func activarNotificaciones(_ sender: Any) {
+		if sw_notificaciones.isOn {
+			self.solicitarAutorizaciónNotificaciones()
+			
+		} else {
+			let unc = UNUserNotificationCenter.current()
+			unc.removeAllPendingNotificationRequests()
+		}
+	}
+	
+	func solicitarAutorizaciónNotificaciones() {
         let opciones = UNAuthorizationOptions.init(
             arrayLiteral: .alert, .badge, .sound)
         
@@ -85,26 +122,32 @@ class ConfigViewController: UIViewController {
     }
     
     func mandarNotificacion() {
+		if horaNotificacion == nil {
+			return
+		}
+		
         let notificationContent = UNMutableNotificationContent()
         
         notificationContent.title = "Recordatorio de practicar"
         notificationContent.body = "La práctica hace al maestro 😁"
         notificationContent.badge = NSNumber(value: 1)
         
-        let trigger = UNTimeIntervalNotificationTrigger(
-            timeInterval: 5,
-            repeats: false)
+		let dailyTrigger = Calendar.current.dateComponents([.minute], from: horaNotificacion)
+		
+		let trigger = UNCalendarNotificationTrigger.init(dateMatching: dailyTrigger, repeats: true)
         
         let request = UNNotificationRequest(
-            identifier: "testNotification",
+            identifier: "miNotificacion",
             content: notificationContent,
             trigger: trigger)
         
-        userNotificationCenter.add(request) { (error) in
-            if let error = error {
-                print("Notification Error: ", error)
-            }
-        }
+		let unc = UNUserNotificationCenter.current()
+		
+		unc.add(request, withCompletionHandler: { (error) in
+			if let error = error {
+				print("Notification Error: ", error)
+			}
+		})
     }
     
     // Métodos para selección de fecha
@@ -119,9 +162,10 @@ class ConfigViewController: UIViewController {
         if let datePickerView = tf_hora.inputView as? UIDatePicker {
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "yyyy-MM-dd"
-            let dateString = dateFormatter.string(from: datePickerView.date)
-            tf_hora.text = dateString
             
+			let dateString = dateFormatter.string(from: datePickerView.date)
+			
+            tf_hora.text = dateString
             tf_hora.resignFirstResponder()
         }
     }
@@ -158,6 +202,7 @@ class ConfigViewController: UIViewController {
         formatter.timeStyle = .short
         
         tf_hora.text = formatter.string(from: datePicker.date)
+		horaNotificacion = datePicker.date
         self.view.endEditing(true);
     }
 }

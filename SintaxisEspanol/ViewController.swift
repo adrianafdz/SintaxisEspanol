@@ -62,15 +62,15 @@ class ViewController: UIViewController {
         //print path
         print(FileManager.getDocumentsDirectory())
     }
+	
+	override func viewDidAppear(_ animated: Bool) {
+		let defaults = UserDefaults.standard
+		Configuracion.numPreg = defaults.integer(forKey: "NumPreg")
+	}
 
     @IBAction func toggleModo(_ sender: UIButton) {
         Configuracion.modo = !Configuracion.modo
         btnModo.setTitle(Configuracion.modo ? "Con comas" : "Sin comas", for: .normal)
-    }
-    
-    @IBAction func unwindConfig(for unwindSegue: UIStoryboardSegue, towards subsequentVC: UIViewController) {
-        let defaults = UserDefaults.standard
-        Configuracion.numPreg = defaults.integer(forKey: "NumPreg")
     }
     
 }
