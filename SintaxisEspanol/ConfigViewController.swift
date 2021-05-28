@@ -74,7 +74,7 @@ class ConfigViewController: UIViewController {
 				mandarNotificacion()
 			}
 			
-		} else {
+        } else if (sw_notificaciones.isOn) {
 			error = true
 			let alert = UIAlertController(
 				title: "Error",
@@ -84,9 +84,7 @@ class ConfigViewController: UIViewController {
 			let accion = UIAlertAction(
 				title: "OK",
 				style: .default,
-				handler: {_ in
-					self.dismiss(animated: true, completion: nil)
-				})
+				handler: nil)
 			
 			alert.addAction(accion)
 			present(alert, animated: true, completion: nil)
