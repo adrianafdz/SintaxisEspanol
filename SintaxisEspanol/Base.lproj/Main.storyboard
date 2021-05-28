@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -47,7 +47,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QOV-aV-P9i">
-                                        <rect key="frame" x="77" y="208" width="116" height="40"/>
+                                        <rect key="frame" x="75.5" y="208" width="119" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="PuE-m5-V1V"/>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="q6f-J5-jmN"/>
@@ -154,13 +154,13 @@
                                 <color key="tintColor" systemColor="systemGreenColor"/>
                             </progressView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ordena la oración" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y5a-0O-IVx">
-                                <rect key="frame" x="30" y="66" width="260" height="17"/>
+                                <rect key="frame" x="30" y="66" width="260" height="20.5"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="753" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GmK-5b-LFL">
-                                <rect key="frame" x="131" y="301.5" width="58" height="27"/>
+                                <rect key="frame" x="127.5" y="296.5" width="65" height="31"/>
                                 <color key="backgroundColor" red="0.31764705879999999" green="0.41176470590000003" blue="0.45098039220000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="ejO-Sx-jtt"/>
@@ -174,7 +174,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="752" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u85-0o-MoC">
-                                <rect key="frame" x="110" y="458.5" width="100" height="35"/>
+                                <rect key="frame" x="110" y="457.5" width="100" height="36"/>
                                 <color key="backgroundColor" red="0.22352941176470587" green="0.31372549019607843" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="Ewh-Hs-78S"/>
@@ -196,7 +196,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView autoresizesSubviews="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="v9B-Gs-Azs">
-                                <rect key="frame" x="20" y="103" width="280" height="188.5"/>
+                                <rect key="frame" x="20" y="106.5" width="280" height="180"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="125" id="xGz-IG-pec"/>
@@ -240,7 +240,7 @@
                                 </connections>
                             </collectionView>
                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="9lq-UF-njj">
-                                <rect key="frame" x="15" y="343.5" width="290" height="100"/>
+                                <rect key="frame" x="15" y="342.5" width="290" height="100"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d02-41-Qzr">
                                         <rect key="frame" x="0.0" y="35" width="30" height="30"/>
@@ -337,17 +337,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Resultados del quiz" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a1T-fm-PTH">
-                                <rect key="frame" x="20" y="30" width="280" height="30"/>
+                                <rect key="frame" x="20" y="30" width="280" height="31.5"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7ld-1U-t6H">
-                                <rect key="frame" x="20" y="177.5" width="280" height="350.5"/>
+                                <rect key="frame" x="20" y="179" width="280" height="349"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="resultado" id="xrx-1H-sHf" customClass="ResultadoCelda" customModule="SintaxisEspanol" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="24.5" width="280" height="43"/>
+                                        <rect key="frame" x="0.0" y="28" width="280" height="43"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xrx-1H-sHf" id="eKf-it-bQP">
                                             <rect key="frame" x="0.0" y="0.0" width="280" height="43"/>
@@ -378,7 +378,7 @@
                                 </connections>
                             </tableView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Thh-3X-Rjh">
-                                <rect key="frame" x="30" y="80" width="174.5" height="77.5"/>
+                                <rect key="frame" x="30" y="81.5" width="174.5" height="77.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Respuestas correctas: " textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qVc-Dw-pQa">
                                         <rect key="frame" x="0.0" y="0.0" width="174.5" height="20.5"/>
@@ -401,7 +401,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="rDI-4Z-iNz">
-                                <rect key="frame" x="238.5" y="80" width="41.5" height="77.5"/>
+                                <rect key="frame" x="238.5" y="81.5" width="41.5" height="77.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IuO-4m-AQK">
                                         <rect key="frame" x="0.0" y="0.0" width="41.5" height="20.5"/>
@@ -534,46 +534,46 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="En el español, las partes de la oración van en un orden específico:" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dH2-Bm-gNl">
-                                                <rect key="frame" x="25" y="122.5" width="264" height="36"/>
+                                                <rect key="frame" x="25" y="122.5" width="264" height="64.5"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Al mover cualquier parte de la oración, es necesario poner una coma antes de o despues de ésta según el caso" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZWI-nC-OrU">
-                                                <rect key="frame" x="25" y="275.5" width="264" height="55"/>
+                                                <rect key="frame" x="25" y="321.5" width="264" height="86.5"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="eEy-fq-lfA">
-                                                <rect key="frame" x="73.5" y="168.5" width="167.5" height="97"/>
+                                                <rect key="frame" x="58.5" y="197" width="197" height="114.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1. Sujeto" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pxi-Er-jA7">
-                                                        <rect key="frame" x="0.0" y="0.0" width="167.5" height="17"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="197" height="20.5"/>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2. Verbo" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tmr-UP-q9O">
-                                                        <rect key="frame" x="0.0" y="20" width="167.5" height="17"/>
+                                                        <rect key="frame" x="0.0" y="23.5" width="197" height="20.5"/>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3. Complemento directo" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l61-0F-RUh">
-                                                        <rect key="frame" x="0.0" y="40" width="167.5" height="17"/>
+                                                        <rect key="frame" x="0.0" y="47" width="197" height="20.5"/>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4. Complemento indirecto" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F6N-Lc-JCm">
-                                                        <rect key="frame" x="0.0" y="60" width="167.5" height="17"/>
+                                                        <rect key="frame" x="0.0" y="70.5" width="197" height="20.5"/>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5. Circunstancial" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YPM-bi-vn7">
-                                                        <rect key="frame" x="0.0" y="80" width="167.5" height="17"/>
+                                                        <rect key="frame" x="0.0" y="94" width="197" height="20.5"/>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -581,7 +581,7 @@
                                                 </subviews>
                                             </stackView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r29-Vg-22M">
-                                                <rect key="frame" x="25" y="350.5" width="264" height="93"/>
+                                                <rect key="frame" x="25" y="428" width="264" height="108.5"/>
                                                 <string key="text">Hay muchas maneras de ordenar una misma oración, por lo que las respuestas que se muestran en esta aplicación son solo una de todas las posibles respuestas</string>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                 <nil key="textColor"/>
@@ -676,7 +676,7 @@ Juventino Gutiérrez Romo </string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wdm-5n-AVx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1237.5" y="1770.4225352112676"/>
+            <point key="canvasLocation" x="1260" y="1816"/>
         </scene>
         <!--Config View Controller-->
         <scene sceneID="uDZ-Dr-YF3">
@@ -687,25 +687,25 @@ Juventino Gutiérrez Romo </string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Configuración" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3LN-oT-caz">
-                                <rect key="frame" x="30" y="45" width="260" height="30"/>
+                                <rect key="frame" x="30" y="45" width="260" height="31.5"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="jy6-PL-HrS">
-                                <rect key="frame" x="52.5" y="120" width="215.5" height="149"/>
+                                <rect key="frame" x="49.5" y="121.5" width="221" height="149"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="63" translatesAutoresizingMaskIntoConstraints="NO" id="kgi-Ws-brr">
-                                        <rect key="frame" x="0.0" y="0.0" width="215.5" height="31"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="221" height="31"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notificaciones" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j0F-kk-Weh">
-                                                <rect key="frame" x="0.0" y="0.0" width="103.5" height="31"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="109" height="31"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QXd-4Z-3Vy">
-                                                <rect key="frame" x="166.5" y="0.0" width="51" height="31"/>
+                                                <rect key="frame" x="172" y="0.0" width="51" height="31"/>
                                                 <connections>
                                                     <action selector="activarNotificaciones:" destination="ZnM-zN-dqd" eventType="valueChanged" id="2d3-2Y-85W"/>
                                                 </connections>
@@ -713,32 +713,32 @@ Juventino Gutiérrez Romo </string>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="119" translatesAutoresizingMaskIntoConstraints="NO" id="Pwg-Zd-EpZ">
-                                        <rect key="frame" x="0.0" y="56" width="215.5" height="34"/>
+                                        <rect key="frame" x="0.0" y="56" width="221" height="34"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hora" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sfw-wh-XMY">
-                                                <rect key="frame" x="0.0" y="0.0" width="31.5" height="34"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="37" height="34"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="10:00" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cAo-lV-3y9">
-                                                <rect key="frame" x="150.5" y="0.0" width="65" height="34"/>
+                                                <rect key="frame" x="156" y="0.0" width="65" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="kUf-vg-WVi">
-                                        <rect key="frame" x="0.0" y="115" width="215.5" height="34"/>
+                                        <rect key="frame" x="0.0" y="115" width="221" height="34"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Número de preguntas" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4YS-nF-99O">
-                                                <rect key="frame" x="0.0" y="0.0" width="140.5" height="34"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="166" height="34"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="10" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WiZ-gZ-5AC">
-                                                <rect key="frame" x="151.5" y="0.0" width="64" height="34"/>
+                                                <rect key="frame" x="177" y="0.0" width="44" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                             </textField>
@@ -747,7 +747,7 @@ Juventino Gutiérrez Romo </string>
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HpT-xa-iWh">
-                                <rect key="frame" x="97.5" y="314" width="125" height="40"/>
+                                <rect key="frame" x="97.5" y="315.5" width="125" height="40"/>
                                 <color key="backgroundColor" red="0.16078431369999999" green="0.20392156859999999" blue="0.45098039220000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="125" id="0g7-1c-mwH"/>
@@ -803,11 +803,11 @@ Juventino Gutiérrez Romo </string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="c9f-bM-wpG">
-                                <rect key="frame" x="30" y="154" width="260" height="364"/>
+                                <rect key="frame" x="30" y="155" width="260" height="363"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="celda" id="MDC-y3-dsd">
-                                        <rect key="frame" x="0.0" y="24.5" width="260" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="28" width="260" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="MDC-y3-dsd" id="R8e-M4-tne">
                                             <rect key="frame" x="0.0" y="0.0" width="260" height="43.5"/>
@@ -821,7 +821,7 @@ Juventino Gutiérrez Romo </string>
                                 </connections>
                             </tableView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Ccw-X7-ZWi">
-                                <rect key="frame" x="50" y="98" width="220" height="32"/>
+                                <rect key="frame" x="50" y="99" width="220" height="32"/>
                                 <segments>
                                     <segment title="Sin Comas"/>
                                     <segment title="Con Comas"/>
@@ -831,7 +831,7 @@ Juventino Gutiérrez Romo </string>
                                 </connections>
                             </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mejores Puntuaciones" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F32-MD-Fqo">
-                                <rect key="frame" x="30" y="45" width="260" height="23"/>
+                                <rect key="frame" x="30" y="45" width="260" height="24"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>

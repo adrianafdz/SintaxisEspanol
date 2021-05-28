@@ -42,6 +42,10 @@ class ViewControllerResultadosFinales: UIViewController, UITableViewDelegate, UI
         lb_puntuacion.text = String(correctas / tiempo * 1000)
         SaveHighscore()
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
+    }
 	
     func SaveHighscore(){
         
