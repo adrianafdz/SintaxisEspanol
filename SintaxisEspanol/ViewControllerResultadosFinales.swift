@@ -36,10 +36,10 @@ class ViewControllerResultadosFinales: UIViewController, UITableViewDelegate, UI
         for resultado in resultados {
             correctas += resultado ? 1 : 0
         }
-        puntos = String(correctas / tiempo * 1000)
+        puntos = String(correctas * 1000 / tiempo)
         lb_respuestas.text = String(correctas)
         lb_tiempo.text = String(tiempo)
-        lb_puntuacion.text = String(correctas / tiempo * 1000)
+        lb_puntuacion.text = String(correctas * 1000 / tiempo)
         SaveHighscore()
     }
     
